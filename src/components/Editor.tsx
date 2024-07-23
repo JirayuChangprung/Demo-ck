@@ -3,10 +3,11 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 // import '../style/Editor.css'; 
 import styles from '../style/Editor.module.css';
+import { EventInfo } from 'ckeditor5';
 
 interface EditorProps {
     value: string;
-    onChange: (event: any, data: string) => void;
+     onChange: (event: EventInfo<string, unknown>, editor: DecoupledEditor) => void;
 }
 
 const Editor: React.FC<EditorProps> = ({ value, onChange }) => {
